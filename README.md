@@ -15,9 +15,9 @@ documented.
 
 ## Constraint that shapes everything
 
-The lab runs on an **Azure free account: USD 200, valid for 30 days**. The credit expires on
-the deadline whether or not it is spent, so the project is scheduled against the calendar, not
-the balance.
+The lab runs on an **Azure free account: USD 200, activated 17/07/2026, expiring 16/08/2026**.
+The credit expires on that date whether or not it is spent, so the project is scheduled against
+the calendar, not the balance.
 
 Read [`COST-CONTROL.md`](COST-CONTROL.md) **before creating any resource**. The one habit that
 matters: *deallocate the VMs from the portal at the end of every session* - shutting Windows
@@ -28,7 +28,7 @@ down from inside the guest still bills for the reserved compute.
 ```
 azure_iam_hands_on/
 ├── COST-CONTROL.md     # read first - guardrails, sizing, teardown
-├── PLAN.md             # the 30-day schedule, phased against the credit expiry
+├── PLAN.md             # the schedule, phased against the 16/08 credit expiry
 ├── labs/               # step-by-step build and exercise guides
 │   ├── 00-azure-setup.md
 │   └── 01-domain-controller.md

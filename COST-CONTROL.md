@@ -1,9 +1,9 @@
 # Cost control — read this before creating anything
 
-The credit is an **Azure free account: USD 200, valid for 30 days**. Two things follow from
-that, and they shape the whole project:
+The credit is an **Azure free account: USD 200, activated 17/07/2026, expiring 16/08/2026**.
+Two things follow from that, and they shape the whole project:
 
-1. **The clock, not the balance, is the binding constraint.** The credit expires on day 30
+1. **The clock, not the balance, is the binding constraint.** The credit expires on 16/08
    whether or not it is spent. The plan is therefore built around a schedule, not a budget.
 2. **A VM left running by accident is the only way to actually run out of money.** Two
    Windows Server VMs left on 24/7 for the full month would consume most of the credit for
@@ -57,8 +57,8 @@ rules that Azure applies to Windows client images.
 
 **Region:** pick one and keep everything in it. `brazilsouth` gives the best RDP latency from
 Brazil, which matters because you will spend hours in that session. Cheaper regions exist
-(`eastus` is usually lowest), but a laggy remote desktop wastes more of your 30 days than the
-price difference saves.
+(`eastus` is usually lowest), but a laggy remote desktop wastes more of the remaining days than
+the price difference saves.
 
 Prices move and vary by region — check the Azure pricing calculator for the real number
 rather than trusting any figure written here. The shape to remember: a B2s Windows VM costs
