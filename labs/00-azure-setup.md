@@ -53,11 +53,28 @@ VMs, disks, NICs, IPs, and virtual network in a single operation.
 
 ### 4. Note your own public IP
 
-You will restrict RDP to it in the next lab. Find it at <https://ifconfig.me> or by searching
-"what is my IP".
+Your machine has two addresses. The **private** one (`192.168.x.x` or similar) exists only
+inside your home network and nobody outside can see it. The **public** one belongs to your
+router, is assigned by your ISP, and is what Azure sees when you connect — every device in
+your house shares it. It is the public one you need here.
 
-**This changes** when your ISP reassigns it or you move networks. When RDP stops working
-later, this is the first thing to re-check — not a broken VM.
+Find it at <https://ifconfig.me>, or search for "what is my IP".
+
+**Why it matters:** when Azure creates a VM with RDP enabled, it opens port 3389 to
+`0.0.0.0/0` — the entire internet. That is not a theoretical exposure: automated scanners
+sweep cloud IP ranges continuously, and a new VM typically starts receiving login attempts
+within minutes, trying `administrator`, `admin`, and common passwords. On a domain controller,
+which holds the credentials for the whole domain, that is unacceptable even in a lab. Setting
+the rule's source to your address means Azure drops everything else before it ever reaches
+Windows.
+
+**This address changes** — residential ISPs hand out dynamic addresses that rotate when you
+reboot the router, when the lease renews, or on their own schedule. It is also different if
+you switch networks (phone hotspot, another location).
+
+When that happens the symptom is that **RDP simply stops connecting** and times out. It looks
+like a dead VM, and it is a stale firewall rule. Re-check your IP and update the rule's source
+before investigating anything else — this is the first thing to check, not the last.
 
 ## Validation
 

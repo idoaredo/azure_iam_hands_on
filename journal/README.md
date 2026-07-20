@@ -48,4 +48,4 @@ Those differences are the most interesting content in this journal.
 
 | Ticket ID | Date | Category | Title | Status |
 |---|---|---|---|---|
-| _(none yet)_ | | | | |
+| [2026-07-20_00](tickets/2026-07-20_00_azure-setup.md) | 2026-07-20 | Infrastructure | Azure account, guardrails, resource group | Done |

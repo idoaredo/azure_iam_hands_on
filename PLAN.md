@@ -26,7 +26,7 @@ spent are not coming back, and a plan that quietly assumes 30 will overrun.
 Get the domain standing. Nothing else can start until this works, so it goes first and gets
 whatever time it needs.
 
-- [ ] Lab 00 — subscription, budget alert, resource group
+- [x] Lab 00 — subscription, budget alert, resource group — ticket [2026-07-20_00](journal/tickets/2026-07-20_00_azure-setup.md)
 - [ ] Lab 01 — DC01 built and promoted, RDP locked to your IP
 - [ ] `seed-ad.ps1` run, domain populated
 
