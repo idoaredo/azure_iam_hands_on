@@ -1,0 +1,27 @@
+# Never commit credentials or environment identifiers.
+# The redaction rules are in journal/README.md - this file is the mechanical backstop,
+# not a substitute for checking what you are about to commit.
+
+*.password
+*.secret
+secrets.*
+*credentials*
+.env
+.env.*
+
+# Azure CLI / PowerShell artifacts that can carry subscription and tenant identifiers
+*.azureProfile.json
+*.publishsettings
+azureProfile*
+.azure/
+
+# Local scratch
+scratch/
+tmp/
+*.tmp
+*.bak
+
+# OS noise
+Thumbs.db
+desktop.ini
+.DS_Store
