@@ -98,6 +98,14 @@ department group and an access-tier group are not always the same thing, and con
 exactly what produces the over-broad "nest the one group everywhere" mistake this lab exists to
 avoid.
 
+## Regulatory relevance
+
+This lab exists, almost word for word, because of DORA Article 9(4)(c): access must be limited to
+"what is required for legitimate and approved functions." The naive remediation this lab warns
+against — nesting one group everywhere — is precisely the failure mode that principle is meant to
+prevent: access broadening silently past what the role needs. See
+[`../REGULATORY-CONTEXT.md`](../REGULATORY-CONTEXT.md) for the full mapping.
+
 ## Interview-ready summary
 
 *"AGDLP isn't 'one group per department' — it's one Global group per distinct access requirement.

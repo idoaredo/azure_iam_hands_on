@@ -13,6 +13,10 @@ That job is on-premises AD work: unlock an account, reset a password, move an ob
 OUs, fix a group membership, read a GPO result. This repository is that work, performed and
 documented.
 
+The regulated environment in question is a Luxembourg bank, so [`REGULATORY-CONTEXT.md`](REGULATORY-CONTEXT.md)
+maps the AD tasks in this repo to the actual frameworks such a bank operates under — DORA and the
+CSSF circulars — so the "why does this matter to the business" answer is ready, not improvised.
+
 ## Constraint that shapes everything
 
 The lab runs on an **Azure free account: USD 200, activated 17/07/2026, expiring 16/08/2026**.

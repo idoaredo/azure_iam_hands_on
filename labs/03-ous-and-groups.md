@@ -106,6 +106,14 @@ group does. That's the one-sentence interview answer: **security groups carry a 
 identifier that Windows evaluates at access-check time; distribution groups don't, so they're
 invisible to permissions no matter where you try to use them.**
 
+## Regulatory relevance
+
+Delegation and access-tier structure exist because of a principle CSSF Circular 12/552 states at
+the institution level: risk-taking and control of that risk should not sit with the same person.
+Scoping delegation to one OU (A13, next lab) instead of granting broad admin rights is that same
+segregation-of-duties idea, applied at directory-object scale. See
+[`../REGULATORY-CONTEXT.md`](../REGULATORY-CONTEXT.md).
+
 ## Compare with the simulator
 
 The deletion-protection default (A7) is the exact behaviour that was **missing** from the

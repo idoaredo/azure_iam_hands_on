@@ -162,6 +162,12 @@ Get-ADUser -Identity jbennett -Properties Title,Surname,DisplayName
 Set-ADUser -Identity jbennett -DisplayName "James Bennett-Hoffmann"
 ```
 
+## Regulatory relevance
+
+A2's "correct OU from day one" and A5's "disable, don't delete" both map directly to DORA Article
+9(4)(c) — access limited to what a role legitimately needs, from creation to departure. See
+[`../REGULATORY-CONTEXT.md`](../REGULATORY-CONTEXT.md) for the full mapping and sources.
+
 ## Compare with the simulator
 
 Every one of these behaviours — `PasswordExpired` reading `True` after a deliberate reset,

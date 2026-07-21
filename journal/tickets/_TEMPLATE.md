@@ -45,6 +45,11 @@ where it does not belong is as much a process failure as skipping it where it do
 iam_guide simulator, note where the real directory behaved differently. Those differences are
 the most interesting content in this journal - they are what a simulator cannot teach.>
 
+## Regulatory relevance
+
+<Optional. One line if the task maps to a specific DORA article or CSSF circular principle - see
+REGULATORY-CONTEXT.md. Skip entirely if there is no genuine connection; do not force one.>
+
 ## What I learned
 
 <2-3 lines, own words.>
