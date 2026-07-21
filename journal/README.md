@@ -49,3 +49,4 @@ Those differences are the most interesting content in this journal.
 | Ticket ID | Date | Category | Title | Status |
 |---|---|---|---|---|
 | [2026-07-20_00](tickets/2026-07-20_00_azure-setup.md) | 2026-07-20 | Infrastructure | Azure account, guardrails, resource group | Done |
+| [2026-07-21_01](tickets/2026-07-21_01_dc01-build.md) | 2026-07-21 | Infrastructure | Build DC01, promote to DC, seed the lab company | Done |

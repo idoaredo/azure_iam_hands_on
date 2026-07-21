@@ -27,8 +27,8 @@ Get the domain standing. Nothing else can start until this works, so it goes fir
 whatever time it needs.
 
 - [x] Lab 00 — subscription, budget alert, resource group — ticket [2026-07-20_00](journal/tickets/2026-07-20_00_azure-setup.md)
-- [ ] Lab 01 — DC01 built and promoted, RDP locked to your IP
-- [ ] `seed-ad.ps1` run, domain populated
+- [x] Lab 01 — DC01 built and promoted, RDP locked to your IP — ticket [2026-07-21_01](journal/tickets/2026-07-21_01_dc01-build.md)
+- [x] `seed-ad.ps1` run, domain populated (8 OUs, 11 users, 7 groups — English/French roster)
 
 Ticket to write: the build itself. It is the most portfolio-relevant single artifact here —
 "I built a forest" is a stronger claim than any individual administration task.
