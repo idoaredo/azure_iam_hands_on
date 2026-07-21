@@ -30,6 +30,8 @@ This repository may become public. Never commit:
 - The VM's public IP address
 - Passwords, including the DSRM password, in any form
 - Screenshots showing personal browser tabs, bookmarks, or e-mail
+- **The time of day** (e.g. the Windows taskbar clock) — never. The date alone is acceptable
+  at most; redact the time portion specifically, leaving the date visible if convenient.
 
 Recording the *type* of subscription, or that a DSRM password was set, is enough.
 
