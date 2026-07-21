@@ -39,7 +39,7 @@ The track from `iam_guide`'s PROGRESS.md, re-run against the real directory. The
 day-one duties of the job you are targeting.
 
 - [ ] A2 — create a user in the correct OU; explain sAMAccountName vs UPN vs DN
-      *(check `dperez` — Finance department, Contractors OU — the DN follows the OU)*
+      *(check `jpetit` — Finance department, Contractors OU — the DN follows the OU)*
 - [ ] A3 — unlock an account; `Search-ADAccount -LockedOut`; locked vs disabled
 - [ ] A4 — password reset with change at next logon; note `PasswordExpired : True` afterwards
 - [ ] A5 — disable and move to Disabled Accounts; disable vs delete

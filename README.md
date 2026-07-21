@@ -45,9 +45,9 @@ azure_iam_hands_on/
 A1-A14 exercise track transfers to this real domain without rewriting it. It plants fixtures
 on purpose:
 
-- `mwilson` is locked out - for the locked-vs-disabled exercise
-- `lthompson` must change password at next logon
-- `dperez` is a **Finance** contractor sitting in the **Contractors** OU - so the DN proves it
+- `tweber` is locked out - for the locked-vs-disabled exercise
+- `cdubois` must change password at next logon
+- `jpetit` is a **Finance** contractor sitting in the **Contractors** OU - so the DN proves it
   follows the OU, not the department
 - The `FS-Finance-*` resource groups hold **users directly**, which is the AGDLP anti-pattern
   the group-design exercise asks you to remediate

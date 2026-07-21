@@ -1,7 +1,8 @@
 # seed-ad.ps1
 #
-# Seeds corp.adlab.local with the same fictional company used by the iam_guide simulator,
-# so the A1-A14 lab track transfers to this real domain without rewriting the exercises.
+# Seeds corp.adlab.local with a fictional company - an English/French roster fitting the
+# Luxembourg financial-sector context this portfolio targets - so the A1-A14 lab track can
+# be run against a real domain without rewriting the exercises.
 #
 # What it creates:
 #   - The department OU structure, plus a Disabled Accounts OU
@@ -13,8 +14,8 @@
 #   - The objects the exercises ask you to create yourself
 #
 # Fixtures planted on purpose:
-#   - mwilson  : locked out          -> task A3 (locked vs disabled)
-#   - lthompson: password expired    -> task A4 (password reset)
+#   - tweber  : locked out          -> task A3 (locked vs disabled)
+#   - cdubois : password expired    -> task A4 (password reset)
 #
 # Run this ON DC01, in an elevated PowerShell, after the forest is promoted.
 # Safe to re-run: every object is created only if it does not already exist.
@@ -109,23 +110,24 @@ New-LabOU -Name "Servers"      -Path $ouIT -Description "Server accounts"      |
 New-LabOU -Name "Workstations" -Path $ouIT -Description "Workstation accounts" | Out-Null
 
 # ---------------------------------------------------------------- Users
+# English/French roster - fits the Luxembourg financial-sector context this portfolio targets.
 Write-Host ""
 Write-Host "Users" -ForegroundColor Yellow
 
-New-LabUser -First "John"  -Last "Smith"    -Sam "jsmith"    -Title "IT Manager"            -Department "Information Technology" -OUPath $ouIT
-New-LabUser -First "David" -Last "Brown"    -Sam "dbrown"    -Title "Systems Administrator" -Department "Information Technology" -OUPath $ouIT
-New-LabUser -First "Mike"  -Last "Wilson"   -Sam "mwilson"   -Title "Help Desk Technician"  -Department "Information Technology" -OUPath $ouIT
-New-LabUser -First "Sarah" -Last "Johnson"  -Sam "sjohnson"  -Title "HR Director"           -Department "Human Resources"        -OUPath $ouHR
-New-LabUser -First "Lisa"  -Last "Thompson" -Sam "lthompson" -Title "Recruiter"             -Department "Human Resources"        -OUPath $ouHR
-New-LabUser -First "Maria" -Last "Costa"    -Sam "mcosta"    -Title "Finance Manager"       -Department "Finance"                -OUPath $ouFinance
-New-LabUser -First "Tina"  -Last "Taylor"   -Sam "ttaylor"   -Title "Senior Accountant"     -Department "Finance"                -OUPath $ouFinance
-New-LabUser -First "Nancy" -Last "Miller"   -Sam "nmiller"   -Title "Accounts Payable"      -Department "Finance"                -OUPath $ouFinance
-New-LabUser -First "Brian" -Last "Moore"    -Sam "bmoore"    -Title "Financial Analyst"     -Department "Finance"                -OUPath $ouFinance
-New-LabUser -First "Paul"  -Last "Reed"     -Sam "preed"     -Title "Sales Representative"  -Department "Sales"                  -OUPath $ouSales
+New-LabUser -First "Laurent" -Last "Girard"   -Sam "lgirard"  -Title "IT Manager"            -Department "Information Technology" -OUPath $ouIT
+New-LabUser -First "James"   -Last "Bennett"  -Sam "jbennett" -Title "Systems Administrator" -Department "Information Technology" -OUPath $ouIT
+New-LabUser -First "Thomas"  -Last "Weber"    -Sam "tweber"   -Title "Help Desk Technician"  -Department "Information Technology" -OUPath $ouIT
+New-LabUser -First "Isabelle" -Last "Moreau"  -Sam "imoreau"  -Title "HR Director"           -Department "Human Resources"        -OUPath $ouHR
+New-LabUser -First "Claire"  -Last "Dubois"   -Sam "cdubois"  -Title "Recruiter"             -Department "Human Resources"        -OUPath $ouHR
+New-LabUser -First "Nicolas" -Last "Simon"    -Sam "nsimon"   -Title "Finance Manager"       -Department "Finance"                -OUPath $ouFinance
+New-LabUser -First "Sophie"  -Last "Bernard"  -Sam "sbernard" -Title "Senior Accountant"     -Department "Finance"                -OUPath $ouFinance
+New-LabUser -First "Emma"    -Last "Clarke"   -Sam "eclarke"  -Title "Accounts Payable"      -Department "Finance"                -OUPath $ouFinance
+New-LabUser -First "Pierre"  -Last "Lefevre"  -Sam "plefevre" -Title "Financial Analyst"     -Department "Finance"                -OUPath $ouFinance
+New-LabUser -First "Daniel"  -Last "Foster"   -Sam "dfoster"  -Title "Sales Representative"  -Department "Sales"                  -OUPath $ouSales
 
 # A contractor placed in Contractors while working for Finance. This is the object that
 # proves a DN follows the OU, not the department - the point of task A2.
-New-LabUser -First "Diego" -Last "Perez"    -Sam "dperez"    -Title "Contractor"            -Department "Finance"                -OUPath $ouContract
+New-LabUser -First "Julien"  -Last "Petit"    -Sam "jpetit"   -Title "Contractor"            -Department "Finance"                -OUPath $ouContract
 
 # ---------------------------------------------------------------- Groups
 Write-Host ""
@@ -147,11 +149,11 @@ New-LabGroup -Name "All Staff" -Scope Global -Category Distribution -OUPath $Dom
 Write-Host ""
 Write-Host "Memberships" -ForegroundColor Yellow
 
-Add-LabMember -Group "IT Administrators" -Members @("jsmith","dbrown")
-Add-LabMember -Group "IT Support"        -Members @("mwilson")
-Add-LabMember -Group "HR Team"           -Members @("sjohnson","lthompson")
-Add-LabMember -Group "Finance Team"      -Members @("mcosta","ttaylor","nmiller","bmoore")
-Add-LabMember -Group "All Staff"         -Members @("jsmith","sjohnson","mcosta","preed")
+Add-LabMember -Group "IT Administrators" -Members @("lgirard","jbennett")
+Add-LabMember -Group "IT Support"        -Members @("tweber")
+Add-LabMember -Group "HR Team"           -Members @("imoreau","cdubois")
+Add-LabMember -Group "Finance Team"      -Members @("nsimon","sbernard","eclarke","plefevre")
+Add-LabMember -Group "All Staff"         -Members @("lgirard","imoreau","nsimon","dfoster")
 
 # ---------------------------------------------------------------------------
 # DELIBERATE ANTI-PATTERN - do not "correct" this here.
@@ -164,40 +166,40 @@ Add-LabMember -Group "All Staff"         -Members @("jsmith","sjohnson","mcosta"
 #   user -> Global group -> Domain Local group -> Permission on the resource
 # Leaving the mess here is what makes that exercise real.
 # ---------------------------------------------------------------------------
-Add-LabMember -Group "FS-Finance-ReadWrite" -Members @("mcosta","ttaylor","bmoore")
-Add-LabMember -Group "FS-Finance-ReadOnly"  -Members @("nmiller")
+Add-LabMember -Group "FS-Finance-ReadWrite" -Members @("nsimon","sbernard","plefevre")
+Add-LabMember -Group "FS-Finance-ReadOnly"  -Members @("eclarke")
 
 # ---------------------------------------------------------------- Fixtures
 Write-Host ""
 Write-Host "Exercise fixtures" -ForegroundColor Yellow
 
-# A4: force lthompson to change the password at next logon (pwdLastSet = 0).
+# A4: force cdubois to change the password at next logon (pwdLastSet = 0).
 # Get-ADUser will then report PasswordExpired : True - that is the expected result.
-Set-ADUser -Identity "lthompson" -ChangePasswordAtLogon $true
-Write-Host "  lthompson: must change password at next logon (task A4)" -ForegroundColor Green
+Set-ADUser -Identity "cdubois" -ChangePasswordAtLogon $true
+Write-Host "  cdubois: must change password at next logon (task A4)" -ForegroundColor Green
 
-# A3: lock mwilson out by exceeding the bad password threshold.
+# A3: lock tweber out by exceeding the bad password threshold.
 # This only works if an account lockout policy is in effect. If the default domain policy
 # has no lockout threshold, the account will not lock - set one first, which is itself
 # worth doing and seeing.
 $lockoutThreshold = (Get-ADDefaultDomainPasswordPolicy).LockoutThreshold
 if ($lockoutThreshold -eq 0) {
     Write-Host "  WARNING: lockout threshold is 0, so no account can lock out." -ForegroundColor Yellow
-    Write-Host "           mwilson was NOT locked. Set a threshold in the Default Domain Policy" -ForegroundColor Yellow
+    Write-Host "           tweber was NOT locked. Set a threshold in the Default Domain Policy" -ForegroundColor Yellow
     Write-Host "           (Computer Config > Policies > Windows Settings > Security Settings >" -ForegroundColor Yellow
     Write-Host "           Account Policies > Account Lockout Policy), then re-run this script." -ForegroundColor Yellow
 } else {
     $wrong = ConvertTo-SecureString "definitely-not-the-password" -AsPlainText -Force
-    $cred  = New-Object System.Management.Automation.PSCredential("CORP\mwilson", $wrong)
+    $cred  = New-Object System.Management.Automation.PSCredential("CORP\tweber", $wrong)
     for ($i = 0; $i -le $lockoutThreshold; $i++) {
         try { Start-Process cmd.exe -Credential $cred -ArgumentList "/c exit" -ErrorAction SilentlyContinue } catch { }
     }
     Start-Sleep -Seconds 2
-    $locked = (Get-ADUser -Identity "mwilson" -Properties LockedOut).LockedOut
+    $locked = (Get-ADUser -Identity "tweber" -Properties LockedOut).LockedOut
     if ($locked) {
-        Write-Host "  mwilson: locked out (task A3)" -ForegroundColor Green
+        Write-Host "  tweber: locked out (task A3)" -ForegroundColor Green
     } else {
-        Write-Host "  mwilson: could not be locked automatically - lock it manually for task A3" -ForegroundColor Yellow
+        Write-Host "  tweber: could not be locked automatically - lock it manually for task A3" -ForegroundColor Yellow
     }
 }
 
