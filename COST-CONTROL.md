@@ -55,8 +55,8 @@ compute running, since that is the one meter that scales with hours rather than 
 
 | VM | Size | Why |
 |---|---|---|
-| DC01 (domain controller) | `Standard_B2s` (2 vCPU, 4 GiB) | The practical minimum for Windows Server 2022 running AD DS + DNS. `B1s` (1 GiB) will thrash. |
-| CLIENT01 (member) | `Standard_B2s` | Only needed from the "join a client to the domain" exercise onward. Create it late, delete it early. |
+| DC01 (domain controller) | `Standard_B2as_v2` (2 vCPU, 8 GiB, AMD) | Actually deployed size — plain `B2s` (Intel, 4 GiB) was not available in Belgium Central's size picker at creation time. Functionally equivalent for AD DS; more RAM than the original B2s plan, no downside. |
+| CLIENT01 (member) | `Standard_B2as_v2` (or `B2s` if it becomes available) | Only needed from the "join a client to the domain" exercise onward. Create it late, delete it early. |
 
 Use **Windows Server 2022** for the client machine too, not Windows 10/11. A member server
 joins the domain and demonstrates the same thing, and it avoids the client-OS licensing
@@ -68,26 +68,33 @@ operator's actual location, which matters more than a small price difference giv
 hours are spent inside that remote session. Keep every resource in this one region; a VM and
 a virtual network in different regions cannot connect.
 
-## Real prices (Belgium Central, pay-as-you-go, checked 2026-07-20 via the Azure Retail
-Prices API — reverify before relying on this if it has been a while)
+## Real prices (Belgium Central, pay-as-you-go — `B2s` checked 2026-07-20, `B2as_v2` confirmed
+from the actual deployment's price summary; reverify via the Azure Retail Prices API if it has
+been a while)
 
 | Item | Price |
 |---|---|
-| `Standard_B2s` Windows compute | $0.056 / hour |
-| Standard SSD 128 GiB (`E10`) | ~$10.78 / month (incl. mount fee) |
+| `Standard_B2as_v2` Windows compute (**what DC01 actually runs**) | ~$0.096 / hour (~$69.79/month sticker, 24/7) |
+| `Standard_B2s` Windows compute (original plan, mostly unavailable here) | $0.056 / hour |
+| Standard SSD 128 GiB (`E10`) | ~$10.78 / month (incl. mount fee) — **this is what DC01 uses** |
 | Premium SSD 128 GiB (`P10`) | $21.68 / month |
 | Standard static public IP | $0.005 / hour (~$3.65 / month if always allocated) |
+
+**Cost of DC01 sitting deallocated, doing nothing** (disk + IP only, no compute):
+~$10.78 + ~$3.65 ≈ **$14.43/month**, or roughly **$0.47/day**. This is the baseline cost for as
+long as the resource group exists, whether or not you ever turn the VM on again.
 
 ## Estimated total for the remaining plan (20/07 → 15/08, DC01 + CLIENT01 from Phase 3)
 
 | Scenario | Estimated total |
 |---|---|
-| **Realistic** — Standard SSD, ~3 h/day compute, deallocated the rest | **~$26** |
-| **Worst case** — Premium SSD, both VMs left running the entire time they exist | **~$87** |
+| **Realistic** — Standard SSD, ~3 h/day compute, deallocated the rest | **~$30** |
+| **Worst case** — Premium SSD, both VMs left running the entire time they exist | **~$125** |
 
-Both are comfortably inside the $200 credit. The deallocate habit and the Standard SSD choice
-are worth keeping anyway — they are the same operational discipline expected on the job, not
-a requirement for staying solvent here.
+Both are comfortably inside the $200 credit — the worst case is closer than the original `B2s`
+estimate (`B2as_v2` costs more per hour), but still leaves roughly $75 of margin even under zero
+discipline. The deallocate habit and the Standard SSD choice are worth keeping anyway — they are
+the same operational discipline expected on the job, not a requirement for staying solvent here.
 
 ## End of the project
 
