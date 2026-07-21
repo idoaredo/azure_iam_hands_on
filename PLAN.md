@@ -35,20 +35,24 @@ Ticket to write: the build itself. It is the most portfolio-relevant single arti
 
 ### Phase 2 — Core AD administration (23/07 – 02/08)
 
-The track from `iam_guide`'s PROGRESS.md, re-run against the real directory. These are the
-day-one duties of the job you are targeting.
+Full step-by-step guides now written — [`labs/02-user-lifecycle.md`](labs/02-user-lifecycle.md),
+[`labs/03-ous-and-groups.md`](labs/03-ous-and-groups.md),
+[`labs/04-agdlp-remediation.md`](labs/04-agdlp-remediation.md). These are the day-one duties of
+the job you are targeting, re-run against the real directory instead of the simulator.
 
-- [ ] A2 — create a user in the correct OU; explain sAMAccountName vs UPN vs DN
-      *(check `jpetit` — Finance department, Contractors OU — the DN follows the OU)*
-- [ ] A3 — unlock an account; `Search-ADAccount -LockedOut`; locked vs disabled
-- [ ] A4 — password reset with change at next logon; note `PasswordExpired : True` afterwards
-- [ ] A5 — disable and move to Disabled Accounts; disable vs delete
-- [ ] A6 — `Set-ADUser` attributes; note GivenName/Surname do not rebuild DisplayName
-- [ ] A7 — create an OU, move objects in; discover deletion protection is on by default
-- [ ] A8/A9 — groups: scope, members, `Get-ADGroupMember`
-- [ ] A10 — **AGDLP remediation**: the FS-Finance-* groups hold users directly on purpose;
-      restructure into user -> Global -> Domain Local -> Permission
-- [ ] A11 — Security vs Distribution group
+- [ ] A2 — create a user (**Marc Wolter**, Sales) in the correct OU; explain sAMAccountName vs
+      UPN vs DN — see `labs/02-user-lifecycle.md`
+- [ ] A3 — unlock `tweber` (seeded locked); `Search-ADAccount -LockedOut`; locked vs disabled
+- [ ] A4 — reset `cdubois`'s password with change at next logon; note `PasswordExpired : True`
+- [ ] A5 — disable **Marc Wolter** and move to Disabled Accounts; disable vs delete
+- [ ] A6 — `Set-ADUser` on `jbennett`; note GivenName/Surname do not rebuild DisplayName
+- [ ] A7 — create the **Marketing** OU, move `dfoster` in; discover deletion protection is on by
+      default (proven against a disposable OU) — see `labs/03-ous-and-groups.md`
+- [ ] A8/A9 — create **Marketing Team** (Security, Global), add/remove `dfoster`
+- [ ] A11 — create **Marketing Distribution List**; compare Security vs Distribution side by side
+- [ ] A10 — **AGDLP remediation**: the FS-Finance-* groups hold users directly on purpose, and the
+      3-ReadWrite/1-ReadOnly split means the naive "nest one group everywhere" fix is itself
+      wrong — see `labs/04-agdlp-remediation.md` for the access-tier-aware correction
 
 ### Phase 3 — Policy, delegation, lifecycle (03/08 – 10/08)
 
