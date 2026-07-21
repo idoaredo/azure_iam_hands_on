@@ -40,8 +40,8 @@ Full step-by-step guides now written — [`labs/02-user-lifecycle.md`](labs/02-u
 [`labs/04-agdlp-remediation.md`](labs/04-agdlp-remediation.md). These are the day-one duties of
 the job you are targeting, re-run against the real directory instead of the simulator.
 
-- [ ] A2 — create a user (**Marc Wolter**, Sales) in the correct OU; explain sAMAccountName vs
-      UPN vs DN — see `labs/02-user-lifecycle.md`
+- [x] A2 — create a user (**Marc Wolter**, Sales) in the correct OU; explain sAMAccountName vs
+      UPN vs DN — ticket [2026-07-21_02](journal/tickets/2026-07-21_02_create-user-mwolter.md)
 - [ ] A3 — unlock `tweber` (seeded locked); `Search-ADAccount -LockedOut`; locked vs disabled
 - [ ] A4 — reset `cdubois`'s password with change at next logon; note `PasswordExpired : True`
 - [ ] A5 — disable **Marc Wolter** and move to Disabled Accounts; disable vs delete
