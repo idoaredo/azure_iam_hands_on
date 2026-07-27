@@ -46,7 +46,8 @@ the job you are targeting, re-run against the real directory instead of the simu
       *(the account had already self-cleared overnight — the lockout duration expired while the VM sat deallocated, which turned out to be the clearest possible proof that locked ≠ disabled)*
 - [x] A4 — reset `cdubois`'s password with change at next logon — ticket [2026-07-22_02](journal/tickets/2026-07-22_02_reset-password-cdubois.md)
 - [x] A5 — disable **Marc Wolter** and move to Disabled Accounts — ticket [2026-07-27_01](journal/tickets/2026-07-27_01_disable-mwolter.md)
-- [ ] A6 — `Set-ADUser` on `jbennett`; note GivenName/Surname do not rebuild DisplayName
+- [x] A6 — `Set-ADUser` on `jbennett` — ticket [2026-07-27_02](journal/tickets/2026-07-27_02_edit-attributes-jbennett.md)
+      *(went further than planned: Surname, DisplayName, and the cn/Name/RDN turned out to be three independent attributes, not two)*
 - [ ] A7 — create the **Marketing** OU, move `dfoster` in; discover deletion protection is on by
       default (proven against a disposable OU) — see `labs/03-ous-and-groups.md`
 - [ ] A8/A9 — create **Marketing Team** (Security, Global), add/remove `dfoster`
