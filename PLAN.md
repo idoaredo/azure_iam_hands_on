@@ -44,7 +44,7 @@ the job you are targeting, re-run against the real directory instead of the simu
       UPN vs DN — ticket [2026-07-21_02](journal/tickets/2026-07-21_02_create-user-mwolter.md)
 - [x] A3 — unlock `tweber`; locked vs disabled — ticket [2026-07-22_01](journal/tickets/2026-07-22_01_unlock-tweber.md)
       *(the account had already self-cleared overnight — the lockout duration expired while the VM sat deallocated, which turned out to be the clearest possible proof that locked ≠ disabled)*
-- [ ] A4 — reset `cdubois`'s password with change at next logon; note `PasswordExpired : True`
+- [x] A4 — reset `cdubois`'s password with change at next logon — ticket [2026-07-22_02](journal/tickets/2026-07-22_02_reset-password-cdubois.md)
 - [ ] A5 — disable **Marc Wolter** and move to Disabled Accounts; disable vs delete
 - [ ] A6 — `Set-ADUser` on `jbennett`; note GivenName/Surname do not rebuild DisplayName
 - [ ] A7 — create the **Marketing** OU, move `dfoster` in; discover deletion protection is on by

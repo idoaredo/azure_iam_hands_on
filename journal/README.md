@@ -54,3 +54,4 @@ Those differences are the most interesting content in this journal.
 | [2026-07-21_01](tickets/2026-07-21_01_dc01-build.md) | 2026-07-21 | Infrastructure | Build DC01, promote to DC, seed the lab company | Done |
 | [2026-07-21_02](tickets/2026-07-21_02_create-user-mwolter.md) | 2026-07-21 | AD | Create a user in the correct OU (Marc Wolter) | Done |
 | [2026-07-22_01](tickets/2026-07-22_01_unlock-tweber.md) | 2026-07-22 | AD | Unlock a locked account (Thomas Weber) | Done |
+| [2026-07-22_02](tickets/2026-07-22_02_reset-password-cdubois.md) | 2026-07-22 | AD | Reset a password with change at next logon (Claire Dubois) | Done |
