@@ -60,8 +60,12 @@ the job you are targeting, re-run against the real directory instead of the simu
 
 The part that separates a help-desk operator from someone who understands the directory.
 
-- [ ] A12 — GPO: link/unlink, enable/disable, `gpresult /user <sam> /r`, LSDOU order
-      *(requires CLIENT01 — create it now, deallocate it when not in use)*
+- [x] A12 (core) — GPO: create/link two real GPOs (screen lock, drive mapping) to Sales, verify
+      with `Get-GPO`/`Get-GPInheritance`, tested with **Group Policy Modeling** instead of
+      `gpresult` (no `CLIENT01` yet) — ticket [2026-08-02_01](journal/tickets/2026-08-02_01_gpo-fundamentals-jml.md),
+      guide `labs/05-gpo-fundamentals.md`. Includes a Joiner/Leaver-lite tie-in (Charlotte Perrin).
+      *(Remaining for the full A12: `gpresult /r` against a real domain-joined client, and
+      GPO enable/disable — needs `CLIENT01`, deferred to whenever that gets built)*
 - [ ] A13 — Delegation of Control: "reset user passwords" on one OU to `IT Support`
 - [ ] L1 / L2 / L3 — Joiner, Mover, Leaver end to end
       *(the Mover trap: old access must be REMOVED, not only new access added)*
