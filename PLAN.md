@@ -55,9 +55,10 @@ the job you are targeting, re-run against the real directory instead of the simu
       [2026-08-13_01](journal/tickets/2026-08-13_01_ous-and-groups-marketing.md)
 - [x] A11 — create **Marketing Distribution List**; compare Security vs Distribution side by side —
       ticket [2026-08-13_01](journal/tickets/2026-08-13_01_ous-and-groups-marketing.md)
-- [ ] A10 — **AGDLP remediation**: the FS-Finance-* groups hold users directly on purpose, and the
+- [x] A10 — **AGDLP remediation**: the FS-Finance-* groups hold users directly on purpose, and the
       3-ReadWrite/1-ReadOnly split means the naive "nest one group everywhere" fix is itself
-      wrong — see `labs/04-agdlp-remediation.md` for the access-tier-aware correction
+      wrong — see `labs/04-agdlp-remediation.md` for the access-tier-aware correction, ticket
+      [2026-08-13_02](journal/tickets/2026-08-13_02_agdlp-remediation-finance.md)
 
 ### Phase 3 — Policy, delegation, lifecycle (03/08 – 10/08)
 
