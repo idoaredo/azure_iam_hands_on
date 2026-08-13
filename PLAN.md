@@ -48,10 +48,13 @@ the job you are targeting, re-run against the real directory instead of the simu
 - [x] A5 — disable **Marc Wolter** and move to Disabled Accounts — ticket [2026-07-27_01](journal/tickets/2026-07-27_01_disable-mwolter.md)
 - [x] A6 — `Set-ADUser` on `jbennett` — ticket [2026-07-27_02](journal/tickets/2026-07-27_02_edit-attributes-jbennett.md)
       *(went further than planned: Surname, DisplayName, and the cn/Name/RDN turned out to be three independent attributes, not two)*
-- [ ] A7 — create the **Marketing** OU, move `dfoster` in; discover deletion protection is on by
-      default (proven against a disposable OU) — see `labs/03-ous-and-groups.md`
-- [ ] A8/A9 — create **Marketing Team** (Security, Global), add/remove `dfoster`
-- [ ] A11 — create **Marketing Distribution List**; compare Security vs Distribution side by side
+- [x] A7 — create the **Marketing** OU, move `dfoster` in; discover deletion protection is on by
+      default (proven against a disposable OU) — see `labs/03-ous-and-groups.md`, ticket
+      [2026-08-13_01](journal/tickets/2026-08-13_01_ous-and-groups-marketing.md)
+- [x] A8/A9 — create **Marketing Team** (Security, Global), add/remove `dfoster` — ticket
+      [2026-08-13_01](journal/tickets/2026-08-13_01_ous-and-groups-marketing.md)
+- [x] A11 — create **Marketing Distribution List**; compare Security vs Distribution side by side —
+      ticket [2026-08-13_01](journal/tickets/2026-08-13_01_ous-and-groups-marketing.md)
 - [ ] A10 — **AGDLP remediation**: the FS-Finance-* groups hold users directly on purpose, and the
       3-ReadWrite/1-ReadOnly split means the naive "nest one group everywhere" fix is itself
       wrong — see `labs/04-agdlp-remediation.md` for the access-tier-aware correction
