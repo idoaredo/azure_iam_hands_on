@@ -1,4 +1,4 @@
-# Azure IAM hands-on — real Active Directory lab
+# AD IAM hands-on — real Active Directory lab
 
 Building a real Active Directory forest on Azure infrastructure, and running a structured
 administration track against it, documented as an audit-grade journal.
@@ -30,7 +30,7 @@ down from inside the guest still bills for the reserved compute.
 ## Structure
 
 ```
-azure_iam_hands_on/
+iam_ad_hands_on/
 ├── COST-CONTROL.md     # read first - guardrails, sizing, teardown
 ├── PLAN.md             # the schedule, phased against the 16/08 credit expiry
 ├── labs/               # step-by-step build and exercise guides
