@@ -75,7 +75,8 @@ The part that separates a help-desk operator from someone who understands the di
 - [x] L1 / L2 / L3 — Joiner, Mover, Leaver end to end
       *(the Mover trap: old access must be REMOVED, not only new access added)* — ticket
       [2026-08-14_02](journal/tickets/2026-08-14_02_joiner-mover-leaver-croussel.md)
-- [ ] A14 — written AD vs Entra comparison
+- [x] A14 — written AD vs Entra comparison — ticket
+      [2026-08-14_03](journal/tickets/2026-08-14_03_ad-vs-entra-comparison.md)
 
 ### Phase 4 — Hybrid, if time allows (11/08 – 14/08)
 
