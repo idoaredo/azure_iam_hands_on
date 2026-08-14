@@ -72,8 +72,9 @@ The part that separates a help-desk operator from someone who understands the di
       GPO enable/disable — needs `CLIENT01`, deferred to whenever that gets built)*
 - [x] A13 — Delegation of Control: "reset user passwords" on one OU to `IT Support` — ticket
       [2026-08-14_01](journal/tickets/2026-08-14_01_delegation-of-control-sales.md)
-- [ ] L1 / L2 / L3 — Joiner, Mover, Leaver end to end
-      *(the Mover trap: old access must be REMOVED, not only new access added)*
+- [x] L1 / L2 / L3 — Joiner, Mover, Leaver end to end
+      *(the Mover trap: old access must be REMOVED, not only new access added)* — ticket
+      [2026-08-14_02](journal/tickets/2026-08-14_02_joiner-mover-leaver-croussel.md)
 - [ ] A14 — written AD vs Entra comparison
 
 ### Phase 4 — Hybrid, if time allows (11/08 – 14/08)
