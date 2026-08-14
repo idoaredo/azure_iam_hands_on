@@ -1,4 +1,4 @@
-# AD IAM hands-on — real Active Directory lab
+# IAM AD hands-on — real Active Directory lab
 
 Building a real Active Directory forest on Azure infrastructure, and running a structured
 administration track against it, documented as an audit-grade journal.
