@@ -33,9 +33,14 @@ down from inside the guest still bills for the reserved compute.
 iam_ad_hands_on/
 ├── COST-CONTROL.md     # read first - guardrails, sizing, teardown
 ├── PLAN.md             # the schedule, phased against the 16/08 credit expiry
+├── REGULATORY-CONTEXT.md  # DORA / CSSF mapping for each exercise
 ├── labs/               # step-by-step build and exercise guides
 │   ├── 00-azure-setup.md
-│   └── 01-domain-controller.md
+│   ├── 01-domain-controller.md
+│   ├── 02-user-lifecycle.md
+│   ├── 03-ous-and-groups.md
+│   ├── 04-agdlp-remediation.md
+│   └── 05-gpo-fundamentals.md
 ├── scripts/
 │   └── seed-ad.ps1     # populates the domain with the lab company
 └── journal/            # the portfolio artifact
@@ -71,7 +76,19 @@ products, and the distinction is worth being able to state.
 
 ## Status
 
-Scaffold complete. Lab 00 and Lab 01 written. Nothing executed yet.
+**Complete and torn down.** Every exercise A2 through A14, plus the full L1/L2/L3
+joiner/mover/leaver cycle, was executed against the real domain and documented in
+`journal/tickets/`. See [`PLAN.md`](PLAN.md) for the phase-by-phase breakdown.
+
+- **Phase 1** — forest built, DC01 promoted, domain seeded
+- **Phase 2** — user lifecycle (A2-A6), OUs and groups (A7-A9, A11), AGDLP remediation (A10)
+- **Phase 3** — GPO fundamentals (A12), delegation of control (A13), full joiner/mover/leaver
+  cycle (L1-L3), written AD vs Entra ID comparison (A14)
+- **Phase 4** (hybrid, Entra Connect) — cut, as planned, to protect the teardown deadline
+- **Phase 5** — resource group `rg-adlab` torn down on 2026-08-14, ahead of the 16/08 credit expiry
+
+The domain no longer exists. Every claim in this repository is backed by a ticket and evidence
+captured while it did.
 
 ---
 

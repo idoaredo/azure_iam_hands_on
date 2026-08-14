@@ -93,12 +93,14 @@ evidence than no sync.
 
 **Do not skip and do not leave to the last hour.**
 
-- [ ] Every ticket written and committed, with evidence
-- [ ] Final captures taken (a screenshot of a domain that no longer exists is still valid
-      evidence; a domain deleted before capture is a month of work with nothing to show)
-- [ ] `README.md` updated with what was actually completed
-- [ ] **Delete the resource group `rg-adlab`**
-- [ ] Confirm in Cost Management that daily spend has dropped to zero
+- [x] Every ticket written and committed, with evidence
+- [x] Final captures taken *(no additional closing screenshot was taken before deletion — every
+      exercise already has its own evidence captured at the time, which is what actually matters)*
+- [x] `README.md` updated with what was actually completed
+- [x] **Delete the resource group `rg-adlab`** — done 2026-08-14, along with the auto-created
+      `NetworkWatcherRG`
+- [ ] Confirm in Cost Management that daily spend has dropped to zero *(cost data can take up to a
+      day to reflect — check tomorrow)*
 
 ## Rules that keep this on schedule
 
